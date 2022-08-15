@@ -9,7 +9,10 @@ function show(id) {
     elem = document.getElementById(id);
     elem.style.display = "block";
     openElem = elem;
-    create_menu();
+    if (menu_open) {
+        create_menu();
+    }
+    window.scrollTo(0, 0);
 }
 
 function show_project(id) {
