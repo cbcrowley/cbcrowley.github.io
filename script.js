@@ -2,6 +2,7 @@ var openElem = document.getElementById('projects');
 const project_items = document.getElementsByClassName('project');
 const links = document.getElementById("links");
 const content = document.getElementById("content");
+const mobile_break = 650; // make sure to change in style too
 var menu_open = false;
 
 function show(id) {
@@ -79,4 +80,14 @@ function displayName() {
     } 
 }
 displayName();
+
+function autoplay_desktop() {
+    var videos = document.getElementsByTagName("video");
+    if (window.innerWidth > mobile_break) {
+        for (let i = 0; i < videos.length; i++) {
+            videos[i].autoplay = true;
+        }
+    }
+}   
+autoplay_desktop();
 
