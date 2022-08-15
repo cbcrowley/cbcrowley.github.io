@@ -1,0 +1,647 @@
+<head>
+	<title>Bishop Crowley</title>
+    <! <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href = "./images/circle.png">
+    <meta property="og:image" content="./images/social-image.jpg">
+    <script src="script.js" defer></script>
+</head>
+
+<style>
+    * {
+    background-color: #f5f5f5;
+    color: #333333;
+    font-family: 'space';
+    font-size: 14px;
+}
+
+@font-face { 
+	font-family: 'space'; 
+	src: url('./fonts/SpaceMono-Regular.ttf'); 
+} 
+
+@font-face { 
+	font-family: 'space-bold'; 
+	src: url('./fonts/SpaceMono-Bold.ttf'); 
+} 
+
+h1 {
+    color: red;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0;
+    background-color: transparent;
+}
+
+h2 {
+    font-family: 'space-bold';
+    margin: 0;
+}
+
+.sp-bold {
+    font-family: 'space-bold';
+    font-size: 1.1em;
+}
+
+.entire-page {
+    padding: 70px;
+}
+
+.links {
+    width: 20%;
+    line-height: 2;
+    position: fixed;
+    background-color: transparent;
+}
+
+.link {
+    cursor: pointer;
+    background-color: transparent;
+    transition: 0.3s;
+}
+
+.mobile-title {
+    text-align: center;
+    position: fixed;
+    display: none;
+    width: calc(100% - 140px);
+    padding-left: 70px;
+    padding-top: 23px;
+    padding-bottom: 20px;
+    z-index: 1;
+    top: 0;
+}
+
+.project-link {
+    color: grey;
+    line-height: 1.4;
+    padding-top: 5px;
+    padding-bottom:6px;
+}
+
+.link:hover {
+    color: blue;
+}
+
+.content {
+    padding-left: clamp(200px, 30%, 300px);
+}
+
+.about {
+    display: none;
+}
+
+.education {
+    display: none;
+    line-height: 1.7;
+}
+
+.course {
+    padding-top: 7px;
+    line-height: 1.3;
+}
+
+.skills {
+    display: none;
+}
+
+.experience {
+    display: none;
+}
+
+.projects {
+    display: block;
+}
+
+.project {
+    text-align: center;
+}
+
+.project-desc {
+    text-align: left;
+    width: 80%;
+    margin: auto;
+}
+
+.label {
+    color:grey;
+    line-height: 2;
+}
+
+.spacer {
+    height: 1.5px;
+    background-color: #D8D8D8;
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.contact {
+    display: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: blue;
+}
+
+.arrow {
+    font-family:Verdana;
+}   
+
+
+.break {
+    height: 7px;
+}
+.toggle-button {
+    position: fixed;
+	display: none;
+	flex-direction: column;
+	justify-content: space-between;
+	width: 25px;
+	height: 21px;
+	margin: auto;
+	margin-right: 25px;
+    margin-top: 13px;
+	right: 0;
+}
+
+.toggle-button .bar {
+	height: 1.5px;
+	width: 100%;
+	background-color: #333333;
+	margin: auto;
+	transition: 0.3s;
+}
+
+.sixteen-by-nine {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+    margin:auto;
+    background-color: transparent;
+}
+
+.glove-pair {
+    position: relative;
+    overflow: hidden;
+    width: calc(50% - 5px);
+    padding-top: calc(66.7% - 5px); /* 3:4 Aspect Ratio */
+    margin:auto;
+    background-color: transparent;
+}
+
+.inner-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 99%;
+    height: 99%;
+    margin:auto;
+    background-color: transparent;
+}
+
+.video-border {
+    padding: 10%; 
+    padding-top: 0; 
+    padding-bottom: 30px;
+}
+
+.park-video-holder {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 600;
+    margin: auto;
+    position: relative;
+    background-color: #f5f5f5;
+    padding-bottom: 30px;
+}
+
+.glove-video-holder {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: 80%;
+    margin: auto;
+    position: relative;
+    background-color: #f5f5f5;
+    padding-bottom: 30px;
+}
+
+
+@media (max-width: 650px) {
+    .mobile-title {
+        display: block;
+    }
+    .title {
+        display: none;
+    }
+
+    .links {
+        display: none;
+        width: 100%;
+    }
+
+    .links.active {
+        display: block;
+    }
+
+    .content {
+        padding-left: 0;
+    }
+
+    .content.active{
+        display: none;
+    }
+
+    .project-desc {
+        width: 100%;
+    }
+
+    .toggle-button {
+        display: flex;
+    }
+    .bottom-bar.active {
+        transform: translateX(-5px) rotate(45deg) translateY(-7px);   
+    }
+  
+    .top-bar.active {
+        transform: translateX(-5px) rotate(-45deg) translateY(7px);
+    }
+
+    .video-border {
+        padding: 0;
+        padding-bottom: 30px;
+    }
+
+    .glove-video-holder {
+        flex-direction:column-reverse;
+        width: 100%;
+    }
+    .glove-pair {
+        width: 100%;
+        padding-top: 133.3%;
+    }
+}
+</style>
+
+<body>
+    <div class="mobile-title"><h1 id="mobile-title"></h1></div>
+    <a href="#" class="toggle-button" onclick="create_menu()">
+        <span class="bar top-bar"></span>
+        <span class="bar bottom-bar"></span>
+    </a>
+    <div class='entire-page'>
+        <div class="links" id="links">
+            <div class="link title"><a href="#"><h1 onclick="show_all_projects();" id="title">&nbsp;</h1></a></div>
+            <div class="link" onclick = "show('about')">about</div>
+            <div class="link" onclick = "show('education')">education</div>
+
+            <a href="#" class="link" onclick = "show('projects'); show_all_projects();">projects</a>
+            <div style="padding-left: 1.5em">           
+                <a href="#"><div class="link project-link" 
+                    onclick = "show_project('glove')">glove</div></a>
+                <a href="#"><div class="link project-link" 
+                    onclick = "show_project('counterpoint')">a.i. counterpoint</div></a>
+                <a href="#"><div class="link project-link" 
+                    onclick = "show_project('para')">spatial audio event</div></a>
+                <a href="#"><div class="link project-link" 
+                    onclick = "show_project('filters')">filters</div></a>
+                <a href="#"><div class="link project-link" 
+                    onclick = "show_project('looper')">audio visualizer</div></a>
+                <a href="#"><div class="link project-link" 
+                    onclick = "show_project('kinect')">depth sensor video</div></a>
+                <a href="#"><div class="link project-link" 
+                    onclick = "show_project('pysynth')">digital synthesizer</div></a>
+            </div>
+            
+            <a class="link" href="https://bishopivy.com/press" 
+                target=_blank>press&nearr;</a>
+
+            <div class="link" onclick = "show('skills')">skills</div>
+            <div class="link" onclick = "show('experience')">experience</div>
+            <div class="link" onclick = "show('contact')">contact</div>
+        </div>
+    
+        <div class="content" id="content">
+            <div class="about" id="about">
+                Programmer + musician in Pittsburgh, PA. <br><br>
+                Current senior at Carnegie Mellon University. Expected graduation December 2022. <br><br>
+                Studying <a target=_blank href="https://www.cs.cmu.edu/~music/mat/about.html">Music and Technology, CMU's joint program between Music+CS+ECE.&nearr;</a><br><br>
+                Looking for work related to software engineering, audio, and/or artificial intelligence
+                in Los Angeles, CA or New York, NY.<br><br>
+                Website by me xoxoxo.
+                <div class="break" style="height:50px"></div>
+    
+            </div>
+            
+            <div class="education" id="education">
+                <span class="sp-bold">Carnegie Mellon University</span>
+                (Pittsburgh, PA)<div class="break"></div>
+                <div class="label">Dec 2022</div><div class="break"></div>
+                Bachelor of Science, Music and Technology<div class="break"></div>
+                Minor in Computer Science<div class="break"></div>
+                GPA: 3.65, Dean's List Spring 2022
+                <div class="break" style="height: 30px"></div>
+                Selected Coursework:
+                <div style="padding-left: 2em; padding-top: 5px">
+                    <span class="sp-bold">C.S.</span><br>
+                    <div class="course"><a target=_blank 
+                        href="https://csd.cmu.edu/course-profiles/15-210-parallel-and-sequential-data-structures-and-algorithms">
+                        Parallel and Sequental Data Structures and Algorithms (Fall 2022)&nearr;</a></div>
+                    <div class="course"><a target=_blank 
+                        href="https://www.cs.cmu.edu/~213/">
+                        Introduction to Computer Systems&nearr;</a></div>
+                    <div class="course"><a target=_blank 
+                        href="http://www.cs.cmu.edu/~15150/">
+                        Functional Programming&nearr;</a></div>
+                    <br>
+ 
+                    <span class="sp-bold">A.I.</span><br>
+                    <div class="course"><a target=_blank 
+                        href="https://deeplearning.cs.cmu.edu/F22/index.html">
+                        Introduction to Deep Learning (Fall 2022)&nearr;</a></div>
+                    
+                    <div class="course"><a target=_blank 
+                        href="https://www.cs.cmu.edu/~15281-s20/">
+                        Artificial Intelligence: Representation and Problem Solving&nearr;</a></div>
+
+                    <div class="course"><a target=_blank 
+                        href="https://www.cnbc.cmu.edu/~tai/cp18.html">
+                        Computational Perception (Fall 2022)&nearr;</a></div>                 
+                    <br>
+                    
+                    <span class="sp-bold">Audio</span><br>
+                    <div class="course"><a target=_blank 
+                        href="https://courses.ece.cmu.edu/18290">
+                        Signals and Systems&nearr;</a></div>
+                        
+                    <div class="course"><a target=_blank 
+                        href="https://csd.cmu.edu/course-profiles/15-322_622-Introduction-to-Computer-Music">
+                        Introduction to Computer Music&nearr;</a></div>
+                    
+                    <div class="course"><a target=_blank 
+                        href="https://www.coursicle.com/cmu/courses/PHY/33114/">
+                        Physics of Musical Sound&nearr;</a></div>
+                    <br>
+
+                </div>
+            </div>
+
+            <div class="projects" id="projects">
+                <div class="project" id="glove">
+                    <! glov video >
+                    <div class = "glove-video-holder">
+                        <div class="glove-pair">
+				            <img class="inner-iframe" src="./images/glove.jpg" alt="Glove">
+			            </div>
+                        <div style="width:10px; height:10px"></div>
+			            <div class ="glove-pair">
+				            <video class ="inner-iframe" controls autoplay muted loop
+				            src="https://drive.google.com/uc?export=download&id=1NyGZ3G_6r63hf_XkItAByDwQskZBfh2a" 
+				            poster="./images/glove-thumb.jpg"
+				            ></video> 
+			            </div>
+		            </div>
+                    <div class="sp-bold">Gesture Glove</div>
+                    <div class="label">Spring 2021</div>
+                    <br>
+                    <div class="project-desc">
+                        Developed MIDI-controller glove from scratch with Arduino.<br><br>
+                        Moving hand up/down, left/right, or twisting updates MIDI control change for each respective axis.<br><br>
+                        Flex sensors detect finger bending. User makes a fist to update CC values.<br><br>
+                        Connects wirelessly via BLE in Audio MIDI Setup (MacOS). No driver or extra software necessary.<br><br>
+                        LED light signals connection status, CC values, and finger positions.<br><br>
+                        Hand-sewn and soldered.<br><br>
+                        Inspired by 
+                        <a target=_blank href="https://mimugloves.com">
+                            Imogen Heap's MiMU gloves&nearr; 
+                        </a>.
+                    </div>
+                </div>
+
+                <div class="project spacer"></div>
+
+                <div class="project" id="counterpoint">
+                    <div class = "park-video-holder">
+			            <div class ="sixteen-by-nine" style="padding-top:100%; width: 80%">
+				            <video class ="inner-iframe" controls autoplay muted loop
+				            src="https://drive.google.com/uc?export=download&id=1O4-g1Fepbl8lVmD3m2AWHEJN7xmug91c" 
+				            poster="./images/counterpoint.jpg"
+				            ></video> 
+			            </div>
+		            </div>
+                    <div class="sp-bold">A.I. Counterpoint</div>
+                    <div class="label">Spring 2022</div><br>
+                    <div class="project-desc">
+                        Developed program that generates original Renaissance Counterpoint<br><br>
+                        Uses simulated annealing to find musical passages with fewest number of harmony errors<br><br>
+                        Developed completely from scratch with no libraries, including a MIDI file (.mid) reader and writer.<br><br>
+                        Detects over 30 different harmony errors such as parallel fifths, non-diatonic notes, and dissonant intervals.
+                    </div>
+                </div>
+
+                <div class="project spacer"></div>
+                
+                <div class="project" id="para">
+                    <! para video >
+                    <div class="video-border">
+                    <div class ="sixteen-by-nine">
+                        <iframe class ="inner-iframe" src="https://www.youtube.com/embed/IUfClyd86DQ?rel=0" title="YouTube video player" frameborder="0" allowfullscreen></iframe> 
+                    </div>
+                    </div>
+                    <span class="sp-bold">PARASOCIAL </span>Spatial Audio Event<br>
+                    <div class="label">Fall 2021, Alumni Concert Hall, Carnegie Mellon University</div>
+                    <br>
+                    <div class="project-desc">
+                        <a target=_blank href="https://studioforcreativeinquiry.org/project/parasocial-listening-event">
+                        Received $500 grant from Carnegie Mellon's STUDIO for Creative Inquiry&nearr;</a>
+                        to create immersive, experimental listening event for original EP titled <em>parasocial</em>.<br><br>
+                        Created 12-speaker spatial audio arrangement.<br><br>
+                        Audio controlled in real-time with 
+                        <span class='link' onclick="show_project('glove')">
+                            custom gesture-tracking glove&nearr;</span>.<br><br>
+                        Video created in collaboration with
+                        <a target=_blank href='https://www.oliviacunnally.com/'>Olivia Cunnally&nearr;</a> and
+                        <a target=_blank href='http://kftchetchko.com/'>Kristian Tchetchko&nearr;</a>.<br><br>
+                        Lighting and speakers in collaboration with 
+                        <a target=_blank href='https://perrynaseck.com/'>Perry Naseck&nearr;</a> and 
+                        <a target=_blank href='https://abtech.org/'>CMU's AB tech&nearr;</a>.
+                    </div>
+                </div>
+
+                <div class="project spacer"></div>
+                
+                <div class="project" id="filters">
+                    <! filter videos >
+                    <div class = "glove-video-holder">
+                        <div class ="glove-pair">
+				            <video class ="inner-iframe" controls autoplay muted loop
+				            src="https://drive.google.com/uc?export=download&id=1zxHO2HkerdzT8aMOtiV0rbJHfl8p3xD5" 
+				            poster="./images/para-filter.jpg"
+				            ></video> 
+			            </div>
+                        <div style="width:10px; height:10px"></div>
+			            <div class ="glove-pair">
+				            <video class ="inner-iframe" controls autoplay muted loop
+				            src="https://drive.google.com/uc?export=download&id=1RfIj-jir9HTlbZBkvRQQX3lhIOa5haSb" 
+				            poster="./images/limbo-halo.jpg"
+				            ></video> 
+			            </div>
+		            </div>
+                    <div class="sp-bold">AR Filters</div>
+                    <div class="label">2020-2022</div>
+                    <br>
+                    <div class="project-desc">
+                        Developed several AR filters for Meta platforms and TikTok using Spark AR and TikTok Effect House.<br><br>
+                        Viewed over 1,500,000 times on TikTok.<br><br>
+                        Filters inspired by 
+                        <a target=_blank href="https://ffm.to/bishopsocial"
+                        >album artwork for original music&nearr;</a>.
+                    </div>
+                </div>
+
+                <div class="project spacer"></div>
+
+                <div class="project" id="looper">
+                     <! tunnel live video >
+                    <div class="video-border">
+                    <div class ="sixteen-by-nine">
+                        <iframe class ="inner-iframe" src="https://www.youtube.com/embed/LozGbyqTmT0?rel=0" title="YouTube video player" frameborder="0" allowfullscreen></iframe> 
+                    </div>
+                    </div>
+                    <span class="sp-bold">Loop Station Audio Visualizer </span><br>
+                    <div class="label">Summer 2021</div>
+                    <br>
+                    <div class="project-desc">
+                        Created visual representation of Ableton Live loopers with Max/MSP/Jitter.<br><br>
+                        Pixelated circles float around screen, each one representing an audio looper.<br><br>
+                        Circles change shape with volume levels and change color with looper status (red for recording).<br><br>
+                        Depth of pixelation controlled by 
+                        <span class='link' onclick="show_project('glove')">
+                            custom gesture-tracking glove&nearr;</span>.
+                    </div>
+                </div>
+
+                <div class="project spacer"></div>
+
+                <div class="project" id="kinect">
+                    <! park video >
+                    <div class = "park-video-holder">
+			            <div class ="sixteen-by-nine" style="padding-top:100%; width: 80%">
+				            <video class ="inner-iframe" controls autoplay muted loop
+				            src="https://drive.google.com/uc?export=download&id=1c4-b6lO0e1tCjbPZvQw0Iu4X3BTRrdcX" 
+				            poster="./images/park-tall-inverted.jpg"
+				            ></video> 
+			            </div>
+		            </div>
+                    <span class="sp-bold">Depth Sensor Music Video</span><br>
+                    <div class="label">Summer 2021</div>
+                    <br>
+                    <div class="project-desc">
+                        Created series of music videos using data from Xbox Kinect.<br><br>
+                        Based off of code from
+                        <a target=_blank href='https://shiffman.net/p5/kinect/'>Daniel Shiffman&nearr;</a>.<br><br>
+                        Position of point cloud can be controlled by 
+                        <span class='link' onclick="show_project('glove')">
+                            custom gesture-tracking glove&nearr;</span>. 
+                    </div>     
+                </div>
+
+                <div class="project spacer"></div>
+                
+                <div class="project" id="pysynth">
+                    <! pysynth video video >
+                    <div class="video-border">
+                        <div class ="sixteen-by-nine">
+                            <video class="inner-iframe" controls autoplay muted loop
+                            src="https://drive.google.com/uc?export=download&id=125wozuAc7y0vB6jwfy0OAhZrkX4UNV8e"
+                            poster="./images/psynth.jpg"></video>
+                        </div>
+                    </div>
+                    <span class="sp-bold">PySynth Digital Syntheseizer</span><br>
+                    <div class="label">Fall 2019</div><br>
+                    <div class="project-desc">
+                        Developed synthseizer application with Python using PyAudio as term project for 
+                        <a target=_blank href='https://www.cs.cmu.edu/~112/index.html'>
+                            15-112: Fundamentals of Programming and Computer Science&nearr;</a>.<br><br>
+                        Includes 3 different oscillator shapes, 
+                        volume and envelope controls, 
+                        16-step sequencer with 4 banks,  
+                        preset saving, 
+                        interactive help menu, and waveform visualizer.<br><br>
+                        Developed user interface with only solid polygons and text.
+                    </div>
+                </div>
+            </div>
+
+            <div class="skills" id="skills">
+                <span class="sp-bold">Programming Languages: </span>
+                C, Python, HTML/CSS, Javascript, Max/MSP, MATLAB, LaTeX<br><br>
+                
+                <span class="sp-bold">Tools: </span>
+                Github, Processing, Arduino, Spark AR<br><br>
+
+                <span class="sp-bold">DAWs: </span>
+                Pro Tools, Ableton Live, Logic Pro, Reason<br><br>
+
+                <span class="sp-bold">Music: </span>
+                producing, mixing, theory, keyboard, guitar, vocals, violin
+            </div>
+        
+            <div class="experience" id="experience">
+                <a class="sp-bold"
+                    target="_blank"
+                    href="https://www.handwritten-records.com/">
+                    Handwritten Records&nearr;</a>
+                <div class="label">Recording Artist, Mar 2021&mdash;Present</div>
+                <div class="break"style="height: 15px"></div>
+                Writes, produces, and promotes original music released under alias "Bishop Ivy."
+                <div class="break"></div>
+                Received over 2.5 million streams.
+                <div class="break"></div>
+                Featured in 
+                <a target=_blank 
+                    href="https://rollingstoneindia.com/global-artists-spotlight-bishop-ivy-isa-reyes-haiden-and-more/">
+                    Rolling Stone&nearr;</a>, 
+                    
+                <a target=_blank
+                    href="https://flaunt.com/content/bishop-ivy-delivers-stunning-new-single-tunnel-vision">
+                    Flaunt Magazine&nearr;</a>,    
+                <a target=_blank
+                    href="https://www.clashmusic.com/next-wave/next-wave-1024-bishop-ivy/">
+                    Clash&nearr;</a>, and 
+                <a target=_blank
+                    href="https://bishopivy.com/press">
+                    more&nearr;</a>.
+                <div class="break"></div>
+                Featured on Spotify's <em>Fresh Finds</em> playlist (800,000 followers), 
+                Apple Music's <em>New Music Daily</em> Playlist, and Amazon Music's 
+                <em>Brand New Music</em>, <em>Breakthrough Indie</em>, and 
+                <em>Bedroom Pop</em> playlists.
+                
+                <br><br><br>
+                
+                <a class="sp-bold"
+                    target="_blank"
+                    href="https://www.wizardradio.com/">
+                    Wizard Radio&nearr;</a>
+                <div class="label">Radio Host, Sep 2018&mdash;May 2019</div>
+                Wrote and recorded music playlists and commentary for bi-weekly show on Wizard Radio, the UK's most popular online teen radio station. 
+                <div class="break"></div>
+                Reached up to 28,000 listeners per show.
+            </div>
+
+            <div class="contact" id="contact">
+                cbcrowley@cmu.edu
+            </div>
+        </div>
+    </div>
+</body>
