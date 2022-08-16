@@ -81,13 +81,15 @@ function displayName() {
 }
 displayName();
 
-function autoplay_desktop() {
+function desktop_only() {
     var videos = document.getElementsByTagName("video");
+    const aboutVideo = document.getElementById("about-video");
     if (window.innerWidth > mobile_break) {
         for (let i = 0; i < videos.length; i++) {
             videos[i].autoplay = true;
         }
+        aboutVideo.style.display = "block";
     }
 }   
-autoplay_desktop();
+desktop_only();
 
