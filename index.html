@@ -325,7 +325,7 @@ a:hover {
     <div class='entire-page'>
         <div class="links" id="links">
             <div class="link title"><a href="."><h1 id="title">&nbsp;</h1></a></div>
-            <div class="link" onclick = "show('about')">about</div>
+            <div class="link" onclick = "show('about'); restart_video('about-video-obj');">about</div>
             <div class="link" onclick = "show('education')">education</div>
 
             <div class="link" onclick = "show('projects'); show_all_projects();">projects</div>
@@ -373,6 +373,7 @@ a:hover {
                         poster="./images/blank.jpg"
                         type="video/mp4"
                         preload="metadata"
+                        id="about-video-obj"
                         ></video> 
                     </div>
                 </div>

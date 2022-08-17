@@ -95,3 +95,9 @@ function desktop_only() {
 }   
 desktop_only();
 
+
+function restart_video(id) {
+    var vid = document.getElementById(id);
+    vid.currentTime = 0;
+}
+
