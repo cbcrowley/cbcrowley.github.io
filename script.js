@@ -86,6 +86,7 @@ function desktop_only() {
     const aboutVideo = document.getElementById("about-video");
     if (window.innerWidth > mobile_break) {
         for (let i = 0; i < videos.length; i++) {
+            videos[i].preload = "auto";
             videos[i].muted = true;
             videos[i].autoplay = true;
         }
