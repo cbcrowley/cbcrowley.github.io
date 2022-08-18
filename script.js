@@ -98,6 +98,8 @@ desktop_only();
 
 function restart_video(id) {
     var vid = document.getElementById(id);
+    vid.pause();
     vid.currentTime = 0;
+    vid.play();
 }
 
