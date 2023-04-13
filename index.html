@@ -337,11 +337,11 @@ a:hover {
             <div class="link" onclick = "show('education')">education</div>
 
             <div class="link" onclick = "show('projects'); show_all_projects();">projects</div>
-            <div style="padding-left: 1.5em">           
+            <div style="padding-left: 1.5em">   
+                <div class="link project-link" 
+                    onclick = "show_project('counterpoint')">ai counterpoint</div>        
                 <div class="link project-link" 
                     onclick = "show_project('glove')">glove</div>
-                <div class="link project-link" 
-                    onclick = "show_project('counterpoint')">a.i. counterpoint</div>
                 <div class="link project-link" 
                     onclick = "show_project('para')">spatial audio event</div>
                 <div class="link project-link" 
@@ -442,6 +442,30 @@ a:hover {
             </div>
 
             <div class="projects" id="projects">
+
+                <div class="project" id="counterpoint">
+                    <div class = "park-video-holder">
+			            <div class ="sixteen-by-nine" style="padding-top:100%; width: 80%">
+				            <video class ="inner-iframe" controls loop playsinline
+				            src="videos/ai.mp4" 
+				            poster="./images/counterpoint.jpg"
+                            type="video/mp4"
+                            preload="metadata"
+				            ></video> 
+			            </div>
+		            </div>
+                    <div class="sp-bold">AI Counterpoint</div>
+                    <div class="label">Spring 2022</div><br>
+                    <div class="project-desc">
+                        Developed program that generates original Renaissance Counterpoint<br><br>
+                        Uses local search & simulated annealing to find musical passages with fewest number of harmony errors<br><br>
+                        Developed completely from scratch with no libraries, including a MIDI file (.mid) reader and writer.<br><br>
+                        Detects over 30 different harmony errors such as parallel fifths, non-diatonic notes, and dissonant intervals.
+                    </div>
+                </div>
+
+                <div class="project spacer"></div>
+
                 <div class="project" id="glove">
                     <! glov video >
                     <div class = "glove-video-holder">
@@ -471,29 +495,6 @@ a:hover {
                         Inspired by 
                         <a target=_blank href="https://mimugloves.com">
                             Imogen Heap's MiMU gloves&nearr;</a>.
-                    </div>
-                </div>
-
-                <div class="project spacer"></div>
-
-                <div class="project" id="counterpoint">
-                    <div class = "park-video-holder">
-			            <div class ="sixteen-by-nine" style="padding-top:100%; width: 80%">
-				            <video class ="inner-iframe" controls loop playsinline
-				            src="videos/ai.mp4" 
-				            poster="./images/counterpoint.jpg"
-                            type="video/mp4"
-                            preload="metadata"
-				            ></video> 
-			            </div>
-		            </div>
-                    <div class="sp-bold">A.I. Counterpoint</div>
-                    <div class="label">Spring 2022</div><br>
-                    <div class="project-desc">
-                        Developed program that generates original Renaissance Counterpoint<br><br>
-                        Uses simulated annealing to find musical passages with fewest number of harmony errors<br><br>
-                        Developed completely from scratch with no libraries, including a MIDI file (.mid) reader and writer.<br><br>
-                        Detects over 30 different harmony errors such as parallel fifths, non-diatonic notes, and dissonant intervals.
                     </div>
                 </div>
 
