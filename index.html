@@ -242,15 +242,6 @@ a:hover {
     padding-bottom: 30px;
 }
 
-.about-video-holder {
-    display: none;
-    width: 35%;
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    z-index: 0;
-}
-
 .glove-video-holder {
     display: flex;
     justify-content: center;
@@ -337,7 +328,7 @@ a:hover {
     <div class='entire-page'>
         <div class="links" id="links">
             <div class="link title"><a href="."><h1 id="title">&nbsp;</h1></a></div>
-            <div class="link" onclick = "restart_video('about-video-obj'); show('about');">about</div>
+            <div class="link" onclick = "show('about');">about</div>
             <div class="link" onclick = "show('experience')">experience</div>
             <div class="link" onclick = "show('education')">education</div>
 
@@ -372,21 +363,7 @@ a:hover {
                     First student at Carnegie Mellon University to graduate with a double major in <a href="https://www.cs.cmu.edu/bs-in-artificial-intelligence/" target=_blank>Artificial Intelligence&nearr;</a> and <a target=_blank href="https://www.cs.cmu.edu/~music/mat/about.html">Music Technology&nearr;.<br><br>
                     Previous SWE intern at <a href="https://www.defensestorm.com" target=_blank>DefenseStorm&nearr;.</a><br><br>
                     This website is by me.
-                </div>
-                <div class="break" style="height:50px"></div>
-
-                <div class = "about-video-holder" id="about-video">
-                    <div class ="sixteen-by-nine" style="padding-top:100%; width: 100%">
-                        <video class ="inner-iframe" muted loop playsinline
-                        src="videos/about-video.mp4" 
-                        poster="./images/blank.jpg"
-                        type="video/mp4"
-                        preload="metadata"
-                        id="about-video-obj"
-                        ></video> 
-                    </div>
-                </div>
-    
+                </div>    
             </div>
             
             <div class="education" id="education">
