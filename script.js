@@ -1,13 +1,18 @@
-var openElem = document.getElementById('projects');
+var openElem = document.getElementById('about');
 const project_items = document.getElementsByClassName('project');
 const links = document.getElementById("links");
 const content = document.getElementById("content");
 const mobile_break = 650; // make sure to change in style too
+const email = "bishopcrowley.ai" + "@" + "gmail.com"
 var menu_open = false;
 
 function show(id) {
     openElem.style.display = "none"
     elem = document.getElementById(id);
+    if (id == "contact") {
+        elem.textContent = email
+        elem.classList.add("link")
+    }
     elem.style.display = "block";
     openElem = elem;
     if (menu_open) {
@@ -103,3 +108,11 @@ function restart_video(id) {
     vid.play();
 }
 
+function copy_text(id) {
+  var textElement = document.getElementById(id);
+  if (textElement.textContent != "copied") {
+    navigator.clipboard.writeText(textElement.textContent);
+    textElement.textContent = "copied";
+    textElement.classList.remove("link")
+  }
+}

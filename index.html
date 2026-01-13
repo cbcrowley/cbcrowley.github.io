@@ -1,5 +1,5 @@
 <head>
-	<title>Bishop Crowley</title>
+    <title>Bishop Crowley</title>
     <meta property="og:title" content="Bishop Crowley" />
     <meta property="og:description" content="Portfolio of projects, experience, education, and skills." />
     <meta property="og:image" content="./images/social-image.jpg" />
@@ -20,13 +20,13 @@
 }
 
 @font-face { 
-	font-family: 'space'; 
-	src: url('./fonts/SpaceMono-Regular.ttf'); 
+    font-family: 'space'; 
+    src: url('./fonts/SpaceMono-Regular.ttf'); 
 } 
 
 @font-face { 
-	font-family: 'space-bold'; 
-	src: url('./fonts/SpaceMono-Bold.ttf'); 
+    font-family: 'space-bold'; 
+    src: url('./fonts/SpaceMono-Bold.ttf'); 
 } 
 
 h1 {
@@ -92,7 +92,7 @@ h2 {
 }
 
 .about {
-    display: none;
+    display: block;
     background-color: transparent;
 }
 
@@ -121,7 +121,7 @@ h2 {
 }
 
 .projects {
-    display: block;
+    display: none;
 }
 
 .project {
@@ -170,24 +170,24 @@ a:hover {
 }
 .toggle-button {
     position: fixed;
-	display: none;
-	flex-direction: column;
-	justify-content: space-between;
-	width: 25px;
-	height: 21px;
-	margin: auto;
-	margin-right: 25px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 25px;
+    height: 21px;
+    margin: auto;
+    margin-right: 25px;
     margin-top: 13px;
-	right: 0;
+    right: 0;
     z-index: 2;
 }
 
 .toggle-button .bar {
-	height: 2px;
-	width: 100%;
-	background-color: grey;
-	margin: auto;
-	transition: 0.3s;
+    height: 2px;
+    width: 100%;
+    background-color: grey;
+    margin: auto;
+    transition: 0.3s;
 }
 
 .sixteen-by-nine {
@@ -338,6 +338,7 @@ a:hover {
         <div class="links" id="links">
             <div class="link title"><a href="."><h1 id="title">&nbsp;</h1></a></div>
             <div class="link" onclick = "restart_video('about-video-obj'); show('about');">about</div>
+            <div class="link" onclick = "show('experience')">experience</div>
             <div class="link" onclick = "show('education')">education</div>
 
             <div class="link" onclick = "show('projects'); show_all_projects();">projects</div>
@@ -362,7 +363,6 @@ a:hover {
                 target=_blank>press&nearr;</a>
 
             <div class="link" onclick = "show('skills')">skills</div>
-            <div class="link" onclick = "show('experience')">experience</div>
             <div class="link" onclick = "show('contact')">contact</div>
             <div class="link"><a href="resume.pdf">resume</a></div>
             
@@ -375,7 +375,7 @@ a:hover {
                     I'm a current senior at Canegie Mellon University in Pittsburgh, PA, graduating December 2023.<br><br>
                     I'm the first student at CMU to double major in <a href="https://www.cs.cmu.edu/bs-in-artificial-intelligence/" target=_blank>Artificial Intelligence&nearr;</a> and <a target=_blank href="https://www.cs.cmu.edu/~music/mat/about.html">Music Technology&nearr;.<br><br>
                     I'm an ex-SWE intern at <a href="https://www.defensestorm.com" target=_blank>DefenseStorm&nearr;.</a><br><br>
-                    This website is by me xoxoxo.
+                    This website is by me.
                 </div>
                 <div class="break" style="height:50px"></div>
 
@@ -398,7 +398,7 @@ a:hover {
                 (Pittsburgh, PA)<div class="break"></div>
                 <div class="label">Dec 2023</div><div class="break"></div>
                 Bachelor of Science, Double Major in Artificial Intelligence and Music Technology<div class="break"></div>
-                GPA: 3.70, Dean's List Fall 2022, Spring 2022
+                GPA: 3.70, Dean's List Fall 2023, Fall/Spring 2022
                 <div class="break" style="height: 30px"></div>
                 Selected Coursework:
                 <div style="padding-left: 2em; padding-top: 5px"> 
@@ -449,15 +449,15 @@ a:hover {
 
                 <div class="project" id="counterpoint">
                     <div class = "park-video-holder">
-			            <div class ="sixteen-by-nine" style="padding-top:100%; width: 80%">
-				            <video class ="inner-iframe" controls loop playsinline
-				            src="videos/ai.mp4" 
-				            poster="./images/counterpoint.jpg"
+                        <div class ="sixteen-by-nine" style="padding-top:100%; width: 80%">
+                            <video class ="inner-iframe" controls loop playsinline
+                            src="videos/ai.mp4" 
+                            poster="./images/counterpoint.jpg"
                             type="video/mp4"
                             preload="metadata"
-				            ></video> 
-			            </div>
-		            </div>
+                            ></video> 
+                        </div>
+                    </div>
                     <div class="sp-bold">AI Counterpoint</div>
                     <div class="label">Spring 2022</div><br>
                     <div class="project-desc">
@@ -476,18 +476,18 @@ a:hover {
                     <! glov video >
                     <div class = "glove-video-holder">
                         <div class="glove-pair">
-				            <img class="inner-iframe" src="./images/glove.jpg" alt="Glove">
-			            </div>
+                            <img class="inner-iframe" src="./images/glove.jpg" alt="Glove">
+                        </div>
                         <div style="width:10px; height:10px"></div>
-			            <div class ="glove-pair">
-				            <video class ="inner-iframe" controls loop playsinline
-				            src="videos/glove.mp4" 
-				            poster="./images/glove-thumb.jpg"
+                        <div class ="glove-pair">
+                            <video class ="inner-iframe" controls loop playsinline
+                            src="videos/glove.mp4" 
+                            poster="./images/glove-thumb.jpg"
                             type="video/mp4"
                             preload="metadata"
-				            ></video> 
-			            </div>
-		            </div>
+                            ></video> 
+                        </div>
+                    </div>
                     <div class="sp-bold">Gesture Glove</div>
                     <div class="label">Spring 2021</div>
                     <br>
@@ -539,23 +539,23 @@ a:hover {
                     <! filter videos >
                     <div class = "glove-video-holder">
                         <div class ="glove-pair">
-				            <video class ="inner-iframe" controls muted loop playsinline
-				            src="videos/para-filter.mp4" 
-				            poster="./images/para-filter.jpg"
+                            <video class ="inner-iframe" controls muted loop playsinline
+                            src="videos/para-filter.mp4" 
+                            poster="./images/para-filter.jpg"
                             type="video/mp4"
                             preload="metadata"
-				            ></video> 
-			            </div>
+                            ></video> 
+                        </div>
                         <div style="width:10px; height:10px"></div>
-			            <div class ="glove-pair">
-				            <video class ="inner-iframe" controls muted loop playsinline
-				            src="videos/halo.mp4" 
-				            poster="./images/limbo-halo.jpg"
+                        <div class ="glove-pair">
+                            <video class ="inner-iframe" controls muted loop playsinline
+                            src="videos/halo.mp4" 
+                            poster="./images/limbo-halo.jpg"
                             type="video/mp4"
                             preload="metadata"
-				            ></video> 
-			            </div>
-		            </div>
+                            ></video> 
+                        </div>
+                    </div>
                     <div class="sp-bold">AR Filters</div>
                     <div class="label">2020-2022</div>
                     <br>
@@ -595,15 +595,15 @@ a:hover {
                 <div class="project" id="kinect">
                     <! park video >
                     <div class = "park-video-holder">
-			            <div class ="sixteen-by-nine" style="padding-top:100%; width: 80%">
-				            <video class ="inner-iframe" controls loop playsinline
-				            src="videos/park.mp4" 
-				            poster="./images/park-tall-inverted.jpg"
+                        <div class ="sixteen-by-nine" style="padding-top:100%; width: 80%">
+                            <video class ="inner-iframe" controls loop playsinline
+                            src="videos/park.mp4" 
+                            poster="./images/park-tall-inverted.jpg"
                             type="video/mp4"
                             preload="metadata"
-				            ></video> 
-			            </div>
-		            </div>
+                            ></video> 
+                        </div>
+                    </div>
                     <span class="sp-bold">Depth Sensor Music Video</span><br>
                     <div class="label">Summer 2021</div>
                     <br>
@@ -649,21 +649,26 @@ a:hover {
 
             <div class="skills" id="skills">
                 <span class="sp-bold">Programming Languages: </span>
-                Python, C, SQL, R, MATLAB, HTML/CSS<br><br>
+                Python, HTML/CSS, Java, C, SQL, R, MATLAB<br><br>
                 
                 <span class="sp-bold">Tools: </span>
-                PyTorch, NumPy, Matplotlib, AWS, Jupyter, GitHub<br><br>
+                AWS, scikit-learn, GitHub, Angular, NumPy, Matplotlib, PyTorch, Jupyter<br><br>
             </div>
         
             <div class="experience" id="experience">
-                
                 <a class="sp-bold"
                     target="_blank"
-                    href="https://studioforcreativeinquiry.org">
-                    Carnegie Mellon University, Frank-Ratchye STUDIO for Creative Inquiry&nearr;</a>
-                <div class="label">Undergraduate Research Assistant, Aug 2022&mdash;Present</div>
+                    href="https://defensestorm.com/">
+                    DefenseStorm&nearr;</a>
+                <div class="label">Software Engineer Intern, Aug 2022&mdash;May 2023</div>
                 <div class="break"style="height: 12px"></div>
-                Assisted Associate Director in development and execution of digital archival asset management including processing, description, arrangement and publication for scholarly use.
+                Led a self-directed data analysis project using Python (NumPy, scikit-learn, Matplotlib) to build regression models identifying previously unknown client data usage trends; delivered findings in a technical report and presentation to engineering team and executives.
+                <div class="break"></div>
+                Collaborated in an AI hackathon to develop a natural-language data query tool, engineering Python-based prompt pipelines for ChatGPT to enable intuitive client access to targeted datasets.
+                <div class="break"></div>
+                Implemented new client-facing web features by translating design mockups into production-ready Angular components.
+                <div class="break"></div>
+                Debugged and resolved backend issues in a Java-based web infrastructure, improving site reliability and performance.
                 <br><br><br>
 
                 <a class="sp-bold"
@@ -700,17 +705,15 @@ a:hover {
                 
                 <a class="sp-bold"
                     target="_blank"
-                    href="https://www.wizardradio.com/">
-                    Wizard Radio&nearr;</a>
-                <div class="label">Radio Host, Sep 2018&mdash;May 2019</div>
+                    href="https://studioforcreativeinquiry.org">
+                    Carnegie Mellon University, Frank-Ratchye STUDIO for Creative Inquiry&nearr;</a>
+                <div class="label">Undergraduate Research Assistant, Aug 2022&mdash;May 2023</div>
                 <div class="break"style="height: 12px"></div>
-                Wrote and recorded music playlists and commentary for bi-weekly show on Wizard Radio, the UK's most popular online teen radio station. 
-                <div class="break"></div>
-                Reached up to 28,000 listeners per show.
+                Assisted Associate Director in development and execution of digital archival asset management including processing, description, arrangement and publication for scholarly use.
             </div>
 
-            <div class="contact" id="contact">
-                cbcrowley [at] cmu [dot] edu
+            <div class="link contact" id="contact" onclick="copy_text(id)">
+                email
             </div>
         </div>
     </div>
